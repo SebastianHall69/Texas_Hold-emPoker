@@ -4,6 +4,8 @@ Hand::Hand(vector<Card> hand)
 {
     if(cards.size()) clearHand();
     setCards(hand);
+    winProb = 0.0F;
+    handStr = 0;
 }
 
 
@@ -47,4 +49,19 @@ void Hand::setCards(vector<Card> hand)
     for(vector<Card>::const_iterator itr = hand.cbegin(); itr != hand.cend(); ++itr) {
         cards.insert(*itr);
     }
+}
+
+void Hand::setWinProb(float prob) {
+    winProb = prob;
+}
+
+float Hand::getWinProb() const {
+    return winProb;
+}
+void Hand::setHandStr(int str) {
+    handStr = str;
+}
+
+int Hand::getHandStr() const {
+    return handStr;
 }

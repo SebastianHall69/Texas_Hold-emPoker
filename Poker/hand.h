@@ -11,6 +11,8 @@ class Hand
 {
 private:
     set<Card> cards;
+    float winProb;
+    int handStr;
 
 public:
     Hand(vector<Card> hand = vector<Card>());//Initailize a hand from a vector
@@ -20,6 +22,10 @@ public:
     void clearHand();
     set<Card>* getCards();
     void setCards(vector<Card> hand);
+    void setWinProb(float prob);
+    float getWinProb() const;
+    void setHandStr(int str);
+    int getHandStr() const;
 };
 
 #endif // HAND_H

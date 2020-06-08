@@ -15,6 +15,7 @@ public:
     Card drawCard();
     vector<Card> drawCards(int num = 2);
     int cardsRemaining() const;
+    Card at(int index) const;
 };
 
 #endif // DECK_H

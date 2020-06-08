@@ -4,6 +4,7 @@ Player::Player(string playerName, vector<Card> cards, int chips, Move move, Stat
 {
     setName(playerName);
     setStatus(status);
+    wins = 0;
 }
 
 Player::~Player()
@@ -148,3 +149,6 @@ string Player::moveToString(const Player::Move &m)
     }
 }
 
+Hand* Player::handRef() {
+    return &hand;
+}

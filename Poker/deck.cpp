@@ -43,3 +43,7 @@ int Deck::cardsRemaining() const
 {
     return deck.size();
 }
+
+Card Deck::at(int index) const {
+    return deck[index];
+}

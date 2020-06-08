@@ -34,6 +34,7 @@ private:
     Status status;
 
 public:
+    int wins = 0;
     Player(string playerName = "Player", vector<Card> cards = vector<Card>(), int chips = 100, Move move = Default, Status status = None);
     ~Player();
 
@@ -55,6 +56,7 @@ public:
     void setBetThisRound(int value);
     bool operator<(const Player &rhs) const;//Sort by chip amount
     static string moveToString(const Player::Move &m);
+    Hand* handRef();
 };
 
 #endif // PLAYER_H
