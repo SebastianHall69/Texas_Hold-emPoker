@@ -6,6 +6,7 @@
 #include <list>
 #include <stack>
 #include <queue>
+#include <unordered_map>
 #include <algorithm>
 
 #include "player.h"
@@ -271,7 +272,7 @@ lpi playPhase(lp *players, lpi player, lpi dealer, int &minBet, int &pot) {
                     } else {
                         raise = false;
                     }
-                } else if(ror < 0.7) {
+                } else if(ror < 0.8) {
                     if(randChoice < 80) {
                         fold = true;
                     } else if(randChoice < 85) {
@@ -279,7 +280,7 @@ lpi playPhase(lp *players, lpi player, lpi dealer, int &minBet, int &pot) {
                     } else {
                         raise = true;
                     }
-                } else if(ror < 1) {
+                } else if(ror < 1.2) {
                     if(randChoice < 60) {
                         call = true;
                     } else {
@@ -642,11 +643,10 @@ string randName() {
     recSort(first, size);
     recSort(last, size);
 
-    //shuffle arrays
-    random_shuffle(first, first + 22);
-    random_shuffle(last, last + 22);
+    //100% Hashing expert
+    unordered_map<string, string> m;
+    m["first"] = first[rand() % size];
+    m["second"] = last[rand() % size];
 
-    int rand1 = rand() % 22, rand2 = rand() % 2;
-
-    return first[rand1] + " " + last[rand2];
+    return m["first"] + " " + m["second"];
 }
